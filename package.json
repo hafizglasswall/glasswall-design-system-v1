@@ -1,44 +1,63 @@
 {
-  "name": "glasswall-design-system",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s public"
-  },
-  "dependencies": {
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "@mui/icons-material": "^5.6.2",
-    "@mui/material": "^5.6.4",
-    "next": "12.1.6",
-    "react": "18.1.0",
-    "react-dom": "18.1.0"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.17.10",
-    "@storybook/addon-actions": "^6.4.22",
-    "@storybook/addon-essentials": "^6.4.22",
-    "@storybook/addon-interactions": "^6.4.22",
-    "@storybook/addon-links": "^6.4.22",
-    "@storybook/builder-webpack5": "^6.4.22",
-    "@storybook/manager-webpack5": "^6.4.22",
-    "@storybook/react": "^6.4.22",
-    "@storybook/testing-library": "^0.0.11",
-    "@types/node": "17.0.31",
-    "@types/react": "18.0.8",
-    "@types/react-dom": "18.0.3",
-    "babel-loader": "^8.2.5",
-    "eslint": "8.14.0",
-    "eslint-config-next": "12.1.6",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-storybook": "^0.5.11",
-    "prettier": "^2.6.2",
-    "typescript": "4.6.4"
-  }
+    "name": "glasswall-design-system",
+    "version": "0.1.0",
+    "private": false,
+    "babel": {
+        "presets": [
+            [
+                "react-app",
+                {
+                    "absoluteRuntime": false
+                }
+            ]
+        ]
+    },
+    "scripts": {
+        "dev": "next dev",
+        "start": "next start",
+        "lint": "next lint",
+        "storybook": "start-storybook -p 6006 -s ./public",
+        "build-storybook": "build-storybook -s public",
+        "build": "cross-env BABEL_ENV=production babel src -d dist",
+        "publish:npm": "rm -rf dist && mkdir dist &&  babel src/component -d dist --copy-files"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.9.0",
+        "@emotion/styled": "^11.8.1",
+        "@mui/icons-material": "^5.6.2",
+        "@mui/material": "^5.6.4",
+        "next": "12.1.6",
+        "react": "18.1.0",
+        "react-dom": "18.1.0"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.17.10",
+        "@babel/core": "^7.17.10",
+        "@babel/preset-react": "^7.16.7",
+        "@storybook/addon-actions": "^6.4.22",
+        "@storybook/addon-essentials": "^6.4.22",
+        "@storybook/addon-interactions": "^6.4.22",
+        "@storybook/addon-links": "^6.4.22",
+        "@storybook/builder-webpack5": "^6.4.22",
+        "@storybook/manager-webpack5": "^6.4.22",
+        "@storybook/react": "^6.4.22",
+        "@storybook/testing-library": "^0.0.11",
+        "@types/node": "17.0.31",
+        "@types/react": "18.0.8",
+        "@types/react-dom": "18.0.3",
+        "auto": "^10.36.5",
+        "babel-loader": "^8.2.5",
+        "cross-env": "^7.0.3",
+        "eslint": "8.14.0",
+        "eslint-config-next": "12.1.6",
+        "eslint-config-prettier": "^8.5.0",
+        "eslint-plugin-prettier": "^4.0.0",
+        "eslint-plugin-storybook": "^0.5.11",
+        "prettier": "^2.6.2",
+        "typescript": "4.6.4"
+    },
+    "main": "dist/index.js",
+    "author": "hafizglasswall <96419297+hafizglasswall@users.noreply.github.com>",
+    "license": "MIT",
+    "repository": "https://github.com/hafizglasswall/glasswall-design-system-v1.git"
 }
