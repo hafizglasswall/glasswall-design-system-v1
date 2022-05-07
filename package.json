@@ -18,8 +18,8 @@
         "lint": "next lint",
         "storybook": "start-storybook -p 6006 -s ./public",
         "build-storybook": "build-storybook -s public",
-        "build": "cross-env BABEL_ENV=production babel src -d dist",
-        "publish:npm": "rm -rf dist && mkdir dist &&  babel src/component -d dist --copy-files"
+        "_build": "cross-env BABEL_ENV=production babel stories -d dist",
+        "build": "cross-env BABEL_ENV=production babel stories -d dist"
     },
     "dependencies": {
         "@emotion/react": "^11.9.0",
@@ -47,6 +47,7 @@
         "@types/react-dom": "18.0.3",
         "auto": "^10.36.5",
         "babel-loader": "^8.2.5",
+        "babel-preset-react-app": "^10.0.1",
         "cross-env": "^7.0.3",
         "eslint": "8.14.0",
         "eslint-config-next": "12.1.6",

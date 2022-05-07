@@ -1,5 +1,6 @@
 import { List } from '@mui/material';
 import { Box } from '@mui/system';
+import React from 'react';
 import { FioNavItem } from '../FioNavItem';
 import { StyledDrawerRoot } from './style';
 
