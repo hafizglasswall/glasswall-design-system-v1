@@ -3,10 +3,16 @@
     "outDir": "dist",
     "module": "commonjs",
     "target": "es5",
-    "lib": ["es5", "es6", "es7", "es2017", "dom"],
+    "lib": [
+      "es5",
+      "es6",
+      "es7",
+      "es2017",
+      "dom"
+    ],
     "sourceMap": true,
     "allowJs": false,
-    "jsx": "react",
+    "jsx": "preserve",
     "moduleResolution": "node",
     "rootDir": "stories",
     "baseUrl": ".",
@@ -19,8 +25,21 @@
     // "noUnusedLocals": true,
     "declaration": true,
     "allowSyntheticDefaultImports": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": false,
+    "incremental": true,
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": ["next-env.d.ts", "stories/**/*"],
-  "exclude": ["node_modules","stories/**/*.stories.tsx"]
+  "include": [
+    "next-env.d.ts",
+    "stories/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "stories/**/*.stories.tsx"
+  ]
 }
