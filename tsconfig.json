@@ -32,7 +32,8 @@
     "incremental": true,
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "composite": true
   },
   "include": [
     "next-env.d.ts",
