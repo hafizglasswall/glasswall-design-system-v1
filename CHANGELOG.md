@@ -1,3 +1,15 @@
+# v0.1.7 (Sun May 08 2022)
+
+#### ⚠️ Pushed to `main`
+
+- testing with type module for package json (96419297+hafizglasswall@users.noreply.github.com)
+
+#### Authors: 1
+
+- hafizglasswall (96419297+hafizglasswall@users.noreply.github.com)
+
+---
+
 # v0.1.6 (Sun May 08 2022)
 
 #### ⚠️ Pushed to `main`
