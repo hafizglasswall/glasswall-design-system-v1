@@ -2,24 +2,13 @@
     "name": "@glasswall/glasswall-design-system",
     "version": "0.1.0",
     "private": false,
-    "babel": {
-        "presets": [
-            [
-                "react-app",
-                {
-                    "absoluteRuntime": false
-                }
-            ]
-        ]
-    },
     "scripts": {
         "dev": "next dev",
         "start": "next start",
         "lint": "next lint",
         "storybook": "start-storybook -p 6006 -s ./public",
         "build-storybook": "build-storybook -s public",
-        "_build": "cross-env BABEL_ENV=production babel stories -d dist",
-        "build": "cross-env BABEL_ENV=production babel stories -d dist"
+        "build": "tsc"
     },
     "dependencies": {
         "@emotion/react": "^11.9.0",
