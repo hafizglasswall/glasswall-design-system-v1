@@ -8,7 +8,8 @@
         "lint": "next lint",
         "storybook": "start-storybook -p 6006 -s ./public",
         "build-storybook": "build-storybook -s public",
-        "build": "tsc"
+        "build": "tsc",
+        "release": "auto shipit --base-branch=main"
     },
     "dependencies": {
         "@emotion/react": "^11.9.0",
