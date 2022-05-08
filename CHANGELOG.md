@@ -1,5 +1,17 @@
 # v0.1.9 (Sun May 08 2022)
 
+#### ⚠️ Pushed to `main`
+
+- package json updated with the files for types (96419297+hafizglasswall@users.noreply.github.com)
+
+#### Authors: 1
+
+- hafizglasswall (96419297+hafizglasswall@users.noreply.github.com)
+
+---
+
+# v0.1.9 (Sun May 08 2022)
+
 
 
 ---
