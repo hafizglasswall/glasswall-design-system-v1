@@ -9,7 +9,8 @@
         "lint": "next lint",
         "storybook": "start-storybook -p 6006 -s ./public",
         "build-storybook": "build-storybook -s public",
-        "build": "tsc",
+        "build": "tsc -p tsconfig.json",
+        "clean": "rm -rf dist",
         "release": "auto shipit --base-branch=main"
     },
     "dependencies": {
@@ -48,10 +49,12 @@
         "prettier": "^2.6.2",
         "typescript": "4.6.4"
     },
-    "main": "dist/index.js",
+    "main": "./dist/index.js",
     "files": [
         "dist"
     ],
+    "module": "./dist/index.js",
+    "types": "./dist/main.d.ts",
     "author": "hafizglasswall <96419297+hafizglasswall@users.noreply.github.com>",
     "license": "MIT",
     "repository": "https://github.com/hafizglasswall/glasswall-design-system-v1.git",
