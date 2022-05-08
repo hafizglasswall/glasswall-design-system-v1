@@ -1,3 +1,16 @@
+# v0.1.6 (Sun May 08 2022)
+
+#### ⚠️ Pushed to `main`
+
+- release scripted updated (96419297+hafizglasswall@users.noreply.github.com)
+- trying with module esnext (96419297+hafizglasswall@users.noreply.github.com)
+
+#### Authors: 1
+
+- hafizglasswall (96419297+hafizglasswall@users.noreply.github.com)
+
+---
+
 # v0.1.5 (Sun May 08 2022)
 
 #### ⚠️ Pushed to `main`
