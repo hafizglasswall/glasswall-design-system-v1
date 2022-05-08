@@ -1,4 +1,4 @@
-export * from './FioDrawer/index';
-export * from './FioNavItem/index';
+export * from './FioDrawer';
+export * from './FioNavItem';
 
 
