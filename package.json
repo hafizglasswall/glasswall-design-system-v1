@@ -2,7 +2,6 @@
     "name": "@glasswall/glasswall-design-system",
     "version": "0.1.9",
     "private": false,
-    "type": "module",
     "scripts": {
         "dev": "next dev",
         "start": "next start",
