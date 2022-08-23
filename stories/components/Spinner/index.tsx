@@ -12,15 +12,19 @@ interface SelectLoadingProps {
     
     loading: boolean; 
     title?: string;
+    color?: string;
+    size?:number;
 }
 
 export const SelectLoading: React.FC<SelectLoadingProps> = (props) => {
     if (!props.loading) return null;
     return (
         <InputAdornment position='start'>
-            <CircularProgress title={props.title} sx={(theme) => ({
-                color: theme.palette.primary.light
-            })} size={20} />
+             <CircularProgress title={props.title} sx={(theme) => { 
+                console.log({theme})
+                return({
+                    color: props.color
+                })}} size={props.size || 20} />
         </InputAdornment>
     )
 }
