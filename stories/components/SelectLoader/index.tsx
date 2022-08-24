@@ -1,16 +1,4 @@
-import { Search } from '@mui/icons-material';
-import {
-    Button,
-    FormControl,
-    Grid,
-    InputLabel,
-    MenuItem,
-    OutlinedInput,
-    Pagination,
-    Paper,
-    Select,
-    SelectChangeEvent,
-} from '@mui/material';
+import { Paper, Select, SelectChangeEvent } from '@mui/material';
 import React from 'react';
 import { SelectLoading } from '../Spinner/';
 
@@ -18,19 +6,20 @@ import { SelectLoading } from '../Spinner/';
  * here its string for a reason, you may have failures in enumToArrOfObject function.
  * test needed for enumToArrOfObject
  */
-interface Options {
+interface user {
     name: string;
     value: string | number;
 }
 interface PaperOfSelectProps {
     loadingTitle: string;
     label: string;
-    options: Options[];
+    users: user[];
     value: string;
     handleReportSelect?: (
         event: SelectChangeEvent<unknown>
     ) => void | undefined;
     loading: boolean;
+    size?: number;
 }
 /**
  * MUI select will not work for proper html semantic in this case select semantic.
@@ -51,6 +40,7 @@ export const CustomSelectOfPaper: React.FC<PaperOfSelectProps> = (props) => {
                 <SelectLoading
                     loading={props.loading}
                     title={props.loadingTitle}
+                    size={props.size}
                 />
             }
             disabled={props.loading}
@@ -60,14 +50,15 @@ export const CustomSelectOfPaper: React.FC<PaperOfSelectProps> = (props) => {
             fullWidth
             component={Select}
             value={props.value}
-            size="small"
             sx={{
                 '& .MuiOutlinedInput-notchedOutline': {
                     borderStyle: 'unset',
                 },
+                height: props.size || 20,
+                p: 3,
             }}
         >
-            {props.options.map((option) => (
+            {props.users?.map((option: user) => (
                 <option key={option.value} value={option.value}>
                     {option.name}
                 </option>
