@@ -6,11 +6,11 @@ import { SelectLoading } from '../Spinner/';
  * here its string for a reason, you may have failures in enumToArrOfObject function.
  * test needed for enumToArrOfObject
  */
-interface user {
+export interface user {
     name: string;
     value: string | number;
 }
-interface PaperOfSelectProps {
+export interface PaperOfSelectProps {
     loadingTitle: string;
     label: string;
     users: user[];
@@ -45,6 +45,7 @@ export const CustomSelectOfPaper: React.FC<PaperOfSelectProps> = (props) => {
             }
             disabled={props.loading}
             onChange={() => {}}
+            data-testid="paper-element"
             native={true}
             id={`select-${props.label}`}
             fullWidth
@@ -58,6 +59,7 @@ export const CustomSelectOfPaper: React.FC<PaperOfSelectProps> = (props) => {
                 p: 3,
             }}
         >
+            <option value="All">All</option>
             {props.users?.map((option: user) => (
                 <option key={option.value} value={option.value}>
                     {option.name}

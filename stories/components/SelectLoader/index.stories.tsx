@@ -1,4 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
+import { expect } from '@storybook/jest';
+import { userEvent, waitFor, within } from '@storybook/testing-library';
 import React from 'react';
 import { CustomSelectOfPaper } from '.';
 import { Spinner } from '../Spinner/index.stories';
@@ -31,4 +33,12 @@ const Template: ComponentStory<typeof CustomSelectOfPaper> = (args) => (
 export const SelectLoader = Template.bind({});
 SelectLoader.args = {
     ...Spinner.args,
+};
+
+SelectLoader.play = async ({ args, canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const paperElemnt = canvas.getByTestId('paper-element');
+
+    expect(paperElemnt).toBeInTheDocument();
 };
