@@ -39,7 +39,7 @@ const colorTheme = {
             default: "#F7F9FC"
         },
         primary: {
-            light: 'red',
+            light: '#8086A5',
             main: "#099E7C", //Primary/Green/AA
             contrastText: "#fff",
         },
@@ -91,6 +91,13 @@ const theme = createTheme({
         },
         MuiOutlinedInput: {
             styleOverrides: {
+                root: {
+                    "&:hover .MuiOutlinedInput-notchedOutline": {
+                        borderColor: "#416D96",
+                        boxShadow: "0px 0px 10px rgba(41, 92, 139, 0.2)",
+                        borderRadius: '5px',
+                    },
+                },
                 notchedOutline: {
                     border: '1px solid #E8E8E8'
                 },

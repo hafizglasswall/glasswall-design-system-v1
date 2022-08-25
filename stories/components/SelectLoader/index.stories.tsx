@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { expect } from '@storybook/jest';
-import { userEvent, waitFor, within } from '@storybook/testing-library';
+import { within } from '@storybook/testing-library';
 import React from 'react';
 import { CustomSelectOfPaper } from '.';
 import { Spinner } from '../Spinner/index.stories';

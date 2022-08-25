@@ -12,7 +12,7 @@
         "build": "tsc -p tsconfig.json",
         "clean": "rm -rf dist",
         "release": "auto shipit --base-branch=main",
-        "test": "jest --watch"
+        "test": "jest --watch --verbose"
     },
     "dependencies": {
         "@emotion/react": "^11.9.0",
