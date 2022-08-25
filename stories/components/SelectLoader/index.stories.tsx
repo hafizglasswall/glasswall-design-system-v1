@@ -9,7 +9,7 @@ export default {
     title: 'Components/Loader/SelectLoader',
     component: CustomSelectOfPaper,
     args: {
-        loading: false,
+        loading: true,
         users: [
             { name: 'John Doe', value: 'John Doe ' },
             { name: 'Harry Foe', value: 'Harry Foe' },

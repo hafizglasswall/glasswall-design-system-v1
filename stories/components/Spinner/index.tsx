@@ -23,7 +23,6 @@ export const SelectLoading: React.FC<SelectLoadingProps> = (props) => {
                 title={props.title}
                 data-testid="spinner-element"
                 sx={(theme) => {
-                    console.log({ theme });
                     return {
                         color: props.color,
                     };
