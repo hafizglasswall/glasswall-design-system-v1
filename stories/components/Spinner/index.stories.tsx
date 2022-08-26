@@ -31,5 +31,4 @@ const Template: ComponentStory<typeof SelectLoading> = (args) => (
 export const Spinner = Template.bind({});
 Spinner.args = {
     loading: true,
-    title: 'Select Loading',
 };

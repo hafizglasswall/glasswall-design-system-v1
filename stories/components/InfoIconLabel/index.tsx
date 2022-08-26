@@ -1,10 +1,9 @@
 import { InfoOutlined } from '@mui/icons-material';
 import { Grid, FormLabel } from '@mui/material';
-import { FormControlProps } from '@mui/material/FormControl';
 import React from 'react';
 import { LightTooltip } from './Tooltip/LightTooltip';
 
-export interface FormItemProps extends FormControlProps {
+export interface FormItemProps {
     label: string;
     tooltipTitle: string;
 }

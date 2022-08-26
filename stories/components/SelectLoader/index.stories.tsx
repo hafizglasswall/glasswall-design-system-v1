@@ -22,6 +22,11 @@ export default {
             control: { type: 'range', min: 10, max: 100, step: 10 },
             if: { arg: 'loading', truthy: true },
         },
+        handleReportSelect: {
+            table: {
+                disable: true,
+            },
+        },
     },
     parameters: { controls: { sort: 'requiredFirst' } },
 } as ComponentMeta<typeof CustomSelectOfPaper>;

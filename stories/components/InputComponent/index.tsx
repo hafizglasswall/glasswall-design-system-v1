@@ -1,16 +1,28 @@
 import { FormControlProps, Grid, OutlinedInput } from '@mui/material';
 import React from 'react';
 
-export interface InputComponentProps extends FormControlProps {
+export interface InputComponentProps {
     /**
-     * This is the Label text value
+     * Label text value
      */
     label: string;
     /**
-     * This is the Label text value
+     * Value for the input element
      */
     value: string;
+    /**
+     * Placeholder value
+     */
     placeholder: string;
+
+    /**
+     * Input element size
+     */
+    size?: 'small' | 'medium';
+    /**
+     * Disable the input element defaulted to false
+     **/
+    disabled: boolean;
     handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 export const InputComponent: React.FC<InputComponentProps> = (props) => {

@@ -9,9 +9,18 @@ export default {
         label: 'inputElement',
         placeholder: 'Enter job name',
         size: 'small',
+        disabled: false,
     },
     argTypes: {
         size: { control: 'radio', options: ['small', 'medium'] },
+        label: {
+            table: {
+                disable: true,
+            },
+        },
+        value: {
+            control: false,
+        },
     },
 } as ComponentMeta<typeof InputComponent>;
 
@@ -31,9 +40,3 @@ const Template: ComponentStory<typeof InputComponent> = (args) => {
 };
 
 export const InputElement = Template.bind({});
-// InputElement.args = {
-//     label: 'inputElement',
-//     value: localValue,
-//     placeholder: 'Enter job name',
-//     size: 'small',
-// };

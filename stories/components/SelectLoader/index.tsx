@@ -11,10 +11,7 @@ export interface user {
     value: string | number;
 }
 export interface PaperOfSelectProps {
-    loadingTitle: string;
-    label: string;
     users: user[];
-    value: string;
     handleReportSelect?: (
         event: SelectChangeEvent<unknown>
     ) => void | undefined;
@@ -39,7 +36,7 @@ export const CustomSelectOfPaper: React.FC<PaperOfSelectProps> = (props) => {
             startAdornment={
                 <SelectLoading
                     loading={props.loading}
-                    title={props.loadingTitle}
+                    // title={props.loadingTitle}
                     size={props.size}
                 />
             }
@@ -47,10 +44,10 @@ export const CustomSelectOfPaper: React.FC<PaperOfSelectProps> = (props) => {
             onChange={() => {}}
             data-testid="paper-element"
             native={true}
-            id={`select-${props.label}`}
+            // id={`select-${props.label}`}
             fullWidth
             component={Select}
-            value={props.value}
+            //value={props.value}
             sx={{
                 '& .MuiOutlinedInput-notchedOutline': {
                     borderStyle: 'unset',

@@ -10,7 +10,6 @@ import React from 'react';
  */
 export interface SelectLoadingProps {
     loading: boolean;
-    title?: string;
     color?: string;
     size?: number;
 }
@@ -20,7 +19,6 @@ export const SelectLoading: React.FC<SelectLoadingProps> = (props) => {
     return (
         <InputAdornment position="start">
             <CircularProgress
-                title={props.title}
                 data-testid="spinner-element"
                 sx={(theme) => {
                     return {
