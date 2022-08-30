@@ -1,5 +1,6 @@
 import "../styles/globals.css";
-
+import { ThemeProvider } from '@mui/material/styles';
+import theme from '../src/theme';
 import * as NextImage from "next/image";
 
 const OriginalNextImage = NextImage.default;
@@ -22,3 +23,16 @@ export const parameters = {
 };
 
 
+
+
+export const decorators = [
+    (Story) => {
+        return (
+            <ThemeProvider theme={theme}>
+                <div style={{ margin: '5em' }}>
+                    <Story />
+                </div>
+            </ThemeProvider>
+        );
+    },
+  ];

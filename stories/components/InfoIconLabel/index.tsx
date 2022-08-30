@@ -27,17 +27,15 @@ const FormTooltip: React.FC<FormTooltipProps> = (props) => {
         <LightTooltip title={props.tooltipTitle} placement="right" arrow={true}>
             <InfoOutlined
                 data-testid="tooltip"
-                sx={{
-                    ml: '0.3em',
-                }}
-
-                // sx={(theme) => {
-                //     console.log({ theme });
-                //     return {
-                //         ml: '0.3em',
-                //         color: theme.palette.secondary.light,
-                //     };
+                // sx={{
+                //     ml: '0.3em',
                 // }}
+                sx={(theme) => {
+                    return {
+                        ml: '0.3em',
+                        color: theme.palette.secondary.light,
+                    };
+                }}
             />
         </LightTooltip>
     );
