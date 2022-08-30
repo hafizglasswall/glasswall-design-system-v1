@@ -40,5 +40,3 @@ export const InputComponent: React.FC<InputComponentProps> = (props) => {
         </Grid>
     );
 };
-
-export default InputComponent;

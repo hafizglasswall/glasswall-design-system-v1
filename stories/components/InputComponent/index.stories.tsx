@@ -27,7 +27,6 @@ export default {
 const Template: ComponentStory<typeof InputComponent> = (args) => {
     const [localValue, setLocalValue] = useState<string>('');
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        console.log(event.target.value);
         setLocalValue(event.target.value);
     };
     return (
