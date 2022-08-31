@@ -48,7 +48,7 @@ export const FormInputElement: ComponentStory<typeof FormInput> = (args) => {
 FormInputElement.play = async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
 
-    const inputElemnt = canvas.getByTestId('inputElement');
+    const FormTextBox = canvas.getByRole('textbox', { name: /Job name/i });
 
-    expect(inputElemnt).toBeInTheDocument();
+    expect(FormTextBox).toBeInTheDocument();
 };
