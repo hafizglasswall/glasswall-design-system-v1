@@ -10,7 +10,7 @@ import {
 import { useId } from 'react';
 import { LightTooltip } from '../InfoIconLabel/Tooltip/LightTooltip';
 
-interface FormItemProps {
+export interface FormItemProps {
     label: string;
     ariaLabel: string;
     tooltipTitle: string;
