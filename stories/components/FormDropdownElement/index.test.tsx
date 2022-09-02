@@ -1,5 +1,5 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { composeStories } from '@storybook/testing-react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import * as stories from './index.stories';
 
 const { FormDropdownElement } = composeStories(stories);
@@ -11,12 +11,17 @@ it('should check wether the Form Dropdown is rendered on screen', () => {
     expect(FormTextBox).toBeInTheDocument();
 });
 
-it('should check wether the input value is changing', async () => {
+it('Initial Render: should render form label select correctly', async () => {
     const changeHandler = jest.fn().mockImplementation(() => {
         console.log('changeHandler mock triggered');
     });
-    render(<FormDropdownElement handleInputChange={changeHandler} />);
+    // render(<FormDropdownElement handleInputChange={changeHandler} />);
+    render(<FormDropdownElement />);
+    screen.getByText('Source container', { exact: true });
 
+
+
+    return;
     // const selectButton = getByRole('button');
     // expect(selectButton).not.toBeNull();
     // await fireEvent.click(selectButton);
