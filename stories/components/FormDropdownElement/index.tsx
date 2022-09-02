@@ -1,15 +1,13 @@
 import {
-    FormControl,
-    FormControlProps,
-    FormHelperText,
+    Box,
+    FormControl, FormHelperText,
     FormLabel,
     Grid,
     MenuItem,
     OutlinedInput,
     Select,
-    SelectChangeEvent,
+    SelectChangeEvent
 } from '@mui/material';
-import { Box } from '@mui/system';
 import { useId } from 'react';
 import { SelectLoading } from '../SelectLoading';
 
@@ -30,9 +28,12 @@ export interface FormLabelSelectProps {
     required: boolean;
 }
 export const FormLabelSelect: React.FC<FormLabelSelectProps> = (props) => {
+    console.log('FormLabelSelect props', props)
     /**
      * to say the label is for an input field, they need to be connected by for and id attribute
      * here the id for htmlfor for label and id for input field is added to connect them for accessbility purposes
+     * we have name and label property in select, but they appear to be not useful.
+     * to add a placeholder we are using renderValue but its not actually a placeholder but a modified styled text to appear as a placeholder.
      */
     const id = useId();
     return (
@@ -51,7 +52,7 @@ export const FormLabelSelect: React.FC<FormLabelSelectProps> = (props) => {
 
             <Grid item xs={12} md={6}>
                 <Select
-                    name={props.label}
+                    // name={props.label}
                     label={props.label}
                     onChange={props.handleInputChange}
                     displayEmpty
@@ -65,6 +66,9 @@ export const FormLabelSelect: React.FC<FormLabelSelectProps> = (props) => {
                     input={<OutlinedInput />}
                     renderValue={(value: SelectOptions['value']) => {
                         if (value) return value;
+                        /**
+                         * mimics the placeholder
+                         */
                         return (
                             <Box color={'text.secondary'} component="span">
                                 Select source container
