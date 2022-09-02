@@ -13,12 +13,12 @@ import { Box } from '@mui/system';
 import { useId } from 'react';
 import { SelectLoading } from '../SelectLoading';
 
-interface SelectOptions {
+export interface SelectOptions {
     label: string;
     value: string;
 }
 
-interface FormLabelSelectProps {
+export interface FormLabelSelectProps {
     options: SelectOptions[];
     label: string;
     handleInputChange: (event: SelectChangeEvent) => void;
@@ -52,6 +52,7 @@ export const FormLabelSelect: React.FC<FormLabelSelectProps> = (props) => {
             <Grid item xs={12} md={6}>
                 <Select
                     name={props.label}
+                    label={props.label}
                     onChange={props.handleInputChange}
                     displayEmpty
                     disabled={props.isLoading}
