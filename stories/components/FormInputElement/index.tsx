@@ -25,8 +25,6 @@ export interface FormItemProps {
     disabled: boolean;
 }
 export const FormInput: React.FC<FormItemProps> = (props) => {
-    console.log('🚀 ~ file: FormInput.tsx ~ line 19 ~ props', props);
-
     /**
      * to say the label is for an input field, they need to be connected by for and id attribute
      * here the id for htmlfor for label and id for input field is added to connect them for accessbility purposes

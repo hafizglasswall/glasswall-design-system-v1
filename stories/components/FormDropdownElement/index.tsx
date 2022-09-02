@@ -1,12 +1,13 @@
 import {
     Box,
-    FormControl, FormHelperText,
+    FormControl,
+    FormHelperText,
     FormLabel,
     Grid,
     MenuItem,
     OutlinedInput,
     Select,
-    SelectChangeEvent
+    SelectChangeEvent,
 } from '@mui/material';
 import { useId } from 'react';
 import { SelectLoading } from '../SelectLoading';
@@ -28,7 +29,6 @@ export interface FormLabelSelectProps {
     required: boolean;
 }
 export const FormLabelSelect: React.FC<FormLabelSelectProps> = (props) => {
-    console.log('FormLabelSelect props', props)
     /**
      * to say the label is for an input field, they need to be connected by for and id attribute
      * here the id for htmlfor for label and id for input field is added to connect them for accessbility purposes

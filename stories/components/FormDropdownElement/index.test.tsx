@@ -12,29 +12,33 @@ it('should check wether the Form Dropdown is rendered on screen', () => {
 });
 
 it('Initial Render: should render form label select correctly', async () => {
-    const changeHandler = jest.fn().mockImplementation(() => {
-        console.log('changeHandler mock triggered');
-    });
-    // render(<FormDropdownElement handleInputChange={changeHandler} />);
     render(<FormDropdownElement isLoading={false} />);
-    screen.getByText('Source container', { exact: true });
-    screen.getByText('Select source container', { exact: true });
-    const selectInput = screen.getByText('Select source container', { exact: true });
+    const selectInput = screen.getByText('Select source container', {
+        exact: true,
+    });
     fireEvent.mouseDown(selectInput);
+
     waitFor(() => expect(screen.getByRole('listbox')).toBeInTheDocument());
-    screen.getByRole('option', { name: 'front office files' })
-
-
-    /**
-     * should be able to see all the options
-     */
-    screen.debug()
-    return;
-
+    expect(screen.getAllByRole('option').length).toBe(3);
 });
-it("Loading: should show loader when loading and input should be disabled", () => {
+it('Loading: should show loader when loading and input should be disabled', () => {});
+it('Success:  when clicked on the option, should call the handle change event', () => {
+    const changeHandler = jest.fn().mockImplementation(() => {});
 
-})
-it("Success:  when clicked on the option, should call the handle change event", () => {
+    render(
+        <FormDropdownElement
+            isLoading={false}
+            handleInputChange={changeHandler}
+        />
+    );
+    const selectInput = screen.getByText('Select source container', {
+        exact: true,
+    });
+    fireEvent.mouseDown(selectInput);
+    const selectedOption = screen.getByRole('option', {
+        name: 'front office files',
+    });
 
-})
+    fireEvent.click(selectedOption);
+    waitFor(() => expect(changeHandler).toHaveBeenCalled());
+});

@@ -54,10 +54,7 @@ FormDropdownElement.play = async ({ args, canvasElement }) => {
     expect(FormTextBox).toBeInTheDocument();
 };
 
-
-
-
 /**
  * rename: FormDropdownElement -> LabelledFormSelect
- * 
+ *
  */
