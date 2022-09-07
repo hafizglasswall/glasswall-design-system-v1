@@ -77,8 +77,8 @@ export const FormLabelSelect: React.FC<FormLabelSelectProps> = (props) => {
                     }}
                 >
                     {!props.isLoading &&
-                        props.options.map((option) => (
-                            <MenuItem key={option.value} value={option.value}>
+                        props?.options?.map((option) => (
+                            <MenuItem key={option?.value} value={option?.value}>
                                 {option.label}
                             </MenuItem>
                         ))}

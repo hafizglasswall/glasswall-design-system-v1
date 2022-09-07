@@ -12,25 +12,23 @@ import {
 } from '@mui/material';
 import { MutableRefObject, useId } from 'react';
 
-interface FilmOptionType {
-    value: string;
+export interface FilmOptionType {
     label: string;
-    title: string;
-    year: number;
+    value: string;
+    title?: string;
+    year?: number;
 }
 
-interface UrlSelectProps {
-    //urlSelectRef: MutableRefObject<HTMLInputElement>;
+export interface UrlSelectProps {
     ariaLabel: string;
     label: string;
-    handleInputChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    handleInputChange: (val: string) => void;
     value: string;
     error: boolean;
     errorMsg: string;
     required: boolean;
     placeholder: string;
     isLoading: boolean;
-    // validated: boolean;
     options: UrlSelectOption[];
 }
 interface UrlSelectOption {
@@ -52,10 +50,9 @@ const filterOptions = createFilterOptions({
 export const AutoCompleteComponent: React.FC<UrlSelectProps> = (props) => {
     /**
      * to say the label is for an input field, they need to be connected by for and id attribute
-     * here the id for htmlfor for label and id for input field is added to connect them for accessbility purposes
+     * here the id for htmlfor for label and id for input field is added to connect them for accessability purposes
      */
     const id = useId();
-    console.log('URL select', props);
     return (
         <Grid
             container
@@ -65,7 +62,7 @@ export const AutoCompleteComponent: React.FC<UrlSelectProps> = (props) => {
             error={props.error}
         >
             <Grid container alignItems="center" item>
-                <FormLabel htmlFor={id} component={'label'}>
+                <FormLabel htmlFor={id} aria-label={props.ariaLabel}>
                     {props.label}
                 </FormLabel>
             </Grid>
@@ -77,12 +74,7 @@ export const AutoCompleteComponent: React.FC<UrlSelectProps> = (props) => {
                     options={props.options}
                     autoHighlight
                     getOptionLabel={(option) => option.value}
-                    // onChange={(_, { label, value }) => {
-                    //     console.log('testhafiz  onChange', _, { label, value })
-                    //     // props.handleInputChange(value)
-                    // }}
                     onInputChange={(event, newVal) => {
-                        console.log('testhafiz onInputChange', event, newVal);
                         props.handleInputChange(newVal);
                     }}
                     size="small"
@@ -98,7 +90,6 @@ export const AutoCompleteComponent: React.FC<UrlSelectProps> = (props) => {
                             placeholder="Paste in a URL or select a location"
                             inputProps={{
                                 ...params.inputProps,
-                                id,
                                 autoComplete: 'new-password', // disable autocomplete and autofill
                             }}
                         />

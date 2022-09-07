@@ -19,3 +19,15 @@ it('should check wether the input value is changing', () => {
     fireEvent.change(inputBox, { target: { value: 'Hello Test' } });
     expect(inputBox.value).toBe('Hello Test');
 });
+
+it('should not display error message when there is no error', () => {
+    render(<FormInputElement error={false} />);
+    const errorMessage = screen.queryByText('Error Occurred');
+    expect(errorMessage).toBeNull();
+});
+
+it('should display error message when there an error', () => {
+    render(<FormInputElement error={true} />);
+    const errorMessage = screen.queryByText('Error Occurred');
+    expect(errorMessage?.textContent).toBe('Error Occurred');
+});

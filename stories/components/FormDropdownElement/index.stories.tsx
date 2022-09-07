@@ -7,7 +7,7 @@ import { FormLabelSelect } from '.';
 import { formItems } from '../../constants/cleanFIlesFormItems';
 
 export default {
-    title: 'Components/Form/FormDropdownElement',
+    title: 'Components/Form/LabelledFormSelect',
     component: FormLabelSelect,
     args: {
         isLoading: true,
@@ -32,7 +32,7 @@ export default {
     },
 } as ComponentMeta<typeof FormLabelSelect>;
 
-export const FormDropdownElement: ComponentStory<typeof FormLabelSelect> = (
+export const LabelledFormSelect: ComponentStory<typeof FormLabelSelect> = (
     args
 ) => {
     const [localValue, setLocalValue] = useState<string>('');
@@ -48,13 +48,8 @@ export const FormDropdownElement: ComponentStory<typeof FormLabelSelect> = (
     );
 };
 
-FormDropdownElement.play = async ({ args, canvasElement }) => {
+LabelledFormSelect.play = async ({ args, canvasElement }) => {
     const canvas = within(canvasElement);
     const FormTextBox = canvas.getByText('Select source container');
     expect(FormTextBox).toBeInTheDocument();
 };
-
-/**
- * rename: FormDropdownElement -> LabelledFormSelect
- *
- */
