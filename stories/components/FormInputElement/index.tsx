@@ -1,11 +1,9 @@
 import { InfoOutlined } from '@mui/icons-material';
 import {
-    FormControl,
-    FormControlProps,
-    FormHelperText,
+    FormControl, FormHelperText,
     FormLabel,
     Grid,
-    OutlinedInput,
+    OutlinedInput
 } from '@mui/material';
 import { useId } from 'react';
 import { LightTooltip } from '../InfoIconLabel/Tooltip/LightTooltip';
@@ -54,6 +52,9 @@ export const FormInput: React.FC<FormItemProps> = (props) => {
             </Grid>
             <Grid item xs={12} md={6}>
                 <OutlinedInput
+                    inputProps={{
+                        autoComplete: 'off'
+                    }}
                     disabled={props.disabled}
                     name={props.label}
                     required={true}
