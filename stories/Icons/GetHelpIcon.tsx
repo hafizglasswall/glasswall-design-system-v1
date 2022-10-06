@@ -1,10 +1,5 @@
 import { SvgIcon, SvgIconProps } from '@mui/material';
-import React from 'react';
-interface CustomSvgIconProps extends SvgIconProps {
-    width: string;
-    height: string;
-}
-export const GetHelpIcon = (props: CustomSvgIconProps) => (
+export const GetHelpIcon = (props: SvgIconProps) => (
     <SvgIcon sx={{ width: props.width, height: props.height }} {...props}>
         <path
             opacity="0.4"
