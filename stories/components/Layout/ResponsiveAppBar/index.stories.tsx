@@ -9,7 +9,7 @@ import { SvgIconProps } from '@mui/material';
 import { ResponsiveAppBar } from '.';
 
 export default {
-    title: 'ConstellationLayout/ResponsiveAppBar',
+    title: 'Constellation/Layout/ResponsiveAppBar',
     component: ResponsiveAppBar,
     parameters: {
         // More on Story LeftNavBar: https://storybook.js.org/docs/react/configure/story-LeftNavBar
