@@ -1,6 +1,6 @@
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import React from 'react';
-import { FioDrawer, NavItem } from '.';
+import { FioDrawer, FioDrawerProps, NavItem } from '.';
 import { AboutActiveIcon } from '../../../Icons/AboutActiveIcon';
 import { AboutIcon } from '../../../Icons/AboutIcon';
 import { CleanFilesActiveIcon } from '../../../Icons/CleanFilesActiveIcon';
@@ -53,7 +53,7 @@ const navItems: NavItem[] = [
         route: '/about',
     },
 ];
-const Template: ComponentStory<typeof FioDrawer> = args => <FioDrawer {...args} />;
+const Template: ComponentStory<typeof FioDrawer> = (args: FioDrawerProps) => <FioDrawer {...args} />;
 export const Default = Template.bind({});
 Default.args = {
     navItems: navItems,
