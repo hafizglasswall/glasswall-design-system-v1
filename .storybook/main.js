@@ -20,15 +20,27 @@ module.exports = {
     "../stories/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
+    '@storybook/addon-controls',
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    '@storybook/addon-actions',
+    '@storybook/addon-a11y',
+    {
+      name: '@storybook/addon-docs',
+      options: {
+        configureJSX: true,
+        babelOptions: {},
+        sourceLoaderOptions: null,
+        transcludeMarkdown: true,
+      },
+    },
   ],
   framework: "@storybook/react",
   typescript: {
     check: false,
     checkOptions: {},
-    reactDocgen: false,
+    reactDocgen: 'react-docgen-typescript',
     reactDocgenTypescriptOptions: {
       shouldExtractLiteralValuesFromEnum: true,
       propFilter: (prop) =>
@@ -37,5 +49,8 @@ module.exports = {
   },
   core: {
     builder: "@storybook/builder-webpack5",
+  },
+  features: {
+    interactionsDebugger: true, // 👈 Enable playback controls
   },
 };
